@@ -13,7 +13,7 @@ const Weather = (props) => {
             const CORS = 'https://cors-anywhere.herokuapp.com/';
             const darkSkyURl = 'https://api.darksky.net/forecast/';
             const darkSkytoken = '0bf7315cb9ae3541719dabc3a5f18e62';
-            const config = '?lang=es'
+            const config = '?lang=es&units=ca'
             const url = `${CORS}${darkSkyURl}${darkSkytoken}/${coordinates[0]},${coordinates[1]}${config}`;
             console.log(url);
             axios.get(url)
@@ -25,9 +25,6 @@ const Weather = (props) => {
         
     },[coordinates]);
 
-            // <h4>{data.weather.summary}</h4>
-            // <h4>{data.weather.temperature}</h4>
-            // <h4>{data.weather.precipProbability}</h4>
     return (
         <div class="Weather">
         <h3>{data.weather.summary}</h3>
