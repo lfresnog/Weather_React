@@ -2,11 +2,9 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import './Styles.css';
 
-
-
 const Weather = (props) => {
     const {coordinates} = props;
-    const [data, setData] = useState({weather: []});
+    const [data, setData] = useState("");
 
     useEffect(() => {
         if(coordinates !== ""){
@@ -18,7 +16,7 @@ const Weather = (props) => {
             console.log(url);
             axios.get(url)
                  .then(response => {
-                    setData({ weather: response.data.currently});
+                    setData(response.data.currently);
                     console.log(data);
                 });
         }
@@ -27,10 +25,10 @@ const Weather = (props) => {
 
     return (
         <div class="Weather">
-        <h3>{data.weather.summary}</h3>
-        <h2>{data.weather.windSpeed}km/h</h2>
-        <h2>{data.weather.precipProbability}%</h2>
-        <h1>{data.weather.temperature}°</h1>        
+        <h3>{data.summary}</h3>
+        <h2>{data.windSpeed}km/h</h2>
+        <h2>{data.precipProbability}%</h2>
+        <h1>{data.temperature}°</h1>        
     </div>
 
     );

@@ -6,9 +6,10 @@ import './Styles.css';
 
 
 
-const Locations = (props) => {
-    const {location, coordinates} = props;
-    const [data, setData] = useState({ locations: [] });
+const Locations = () => {
+    const [location, setLocation] = useState("");
+    const [coordinates, setCoordinates] = useState("");
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         if(location !== ""){
@@ -20,11 +21,11 @@ const Locations = (props) => {
             console.log(url);
             axios.get(url)
                 .then(response => {
-                    setData({ locations: response.data.features});
+                    setData(response.data.features);
                     console.log(data);
                 });
         }else{
-            setData({locations:[]});
+            setData([]);
         }
     },[location]);
 
@@ -33,10 +34,10 @@ const Locations = (props) => {
         <div className='Locations'>
             <div className='Search'>
                 <div className='Filter'>
-                    <SearchFilter onClick={{onLocation:props.onClick.onLocation}}/>
+                    <SearchFilter onClick={{onLocation:setLocation}}/>
                 </div>
                 <div className='Results'>
-                    {data.locations.map(elem => {return <span className='Place' onClick={()=>props.onClick.onCoordinates(elem.geometry.coordinates)}>{elem.place_name}</span>})}
+                    {data.map(elem => {return <span className='Place' onClick={()=>setCoordinates(elem.geometry.coordinates)}>{elem.place_name}</span>})}
                 </div>
             </div>
             
