@@ -4,8 +4,6 @@ import SearchFilter from './SearchFilter'
 import Weather from './Weather';
 import './Styles.css';
 
-
-
 const Locations = () => {
     const [location, setLocation] = useState("");
     const [coordinates, setCoordinates] = useState("");
@@ -28,7 +26,6 @@ const Locations = () => {
             setData([]);
         }
     },[location]);
-
 
     return (
         <div className='Locations'>
