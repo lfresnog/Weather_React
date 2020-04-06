@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  flex-direction:column;
+}
+
+.Body{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.Title{
+  display: flex;
+  justify-content: center;
+}
+
+

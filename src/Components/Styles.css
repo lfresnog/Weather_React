@@ -1,0 +1,60 @@
+.Results{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+}
+
+.Place{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    font-size: 15px;
+    overflow: hidden;
+    width: 392px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.Place:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+
+.Filter{
+    display: flex;
+    
+}
+
+.Locations{
+    display: flex;
+
+    
+}
+
+.Weather {
+    
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    padding: 5px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 0px;
+    border: 4px solid black;
+}
+
+.filter_input{
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 392px;
+    height: 48px;
+    border-bottom: 1px solid transparent;
+    transition-duration: 0.3s;
+}
